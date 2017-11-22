@@ -1,0 +1,52 @@
+<!--http://www.javascriptsource.com/text-effects/auto-popup-window.html  -->
+<!DOCTYPE html>
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+function popupWin() {
+	text =  "<html>\n<head>\n<title>Pop Window</title>\n<body>\n";
+	text += "<center>\n<br>";
+	text += "login"
+	text += "</center>\n</body>\n</html>\n";
+	setTimeout('windowProp(text)', 3000); 		// delay 3 seconds before opening
+	}
+	function windowProp(text) {
+	newWindow = window.open('','newWin','width=300,height=100');
+	newWindow.document.write(text);
+	}
+	function closeWin(newWindow) {
+	newWindow.close();				
+	}
+</script>
+<meta charset="ISO-8859-1">
+<title>PackectTecWebSite</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onLoad="popupWin()">
+<header class="header">
+<h1>OverView</h1>
+</header>
+
+<div class="topnav">
+	<a href="index.html"><b>Pagina principal</b></a>
+	<a href="monitor.html">Monitor Red</a>
+	<a href="caminos.html">Cerrar Caminos</a>
+	<a href="buscar.html">Búsqueda</a>
+</div>
+<div class="grid">
+	<div class="columnL">
+		<p>Página para monitorear el servidor.</p> 
+		<p>Puede cerrar y ver los caminos disponibles</p> 
+		<p>además de poder ver los mensajes y buscar</p> 
+	</div>
+	<div  class="columnR">
+		<table>
+			<tr><td>Total Usuarios</td></tr>
+			<tr><td>Usuarios conectados</td></tr>
+			<tr><td>Total de mensajes enviados</td></tr>
+			</table>
+	</div>
+</div>
+
+</body>
+</html>
