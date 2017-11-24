@@ -2,17 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <SCRIPT LANGUAGE="JavaScript">
 function popupWin() {
-	text =  "<html>\n<head>\n<title>Pop Window</title>\n<body>\n";
-	text += "<center>\n<br>";
-	text += "login"
-	text += "</center>\n</body>\n</html>\n";
-	setTimeout('windowProp(text)', 3000); 		// delay 3 seconds before opening
+	text = "";
+	setTimeout('windowProp(text)', 3000);
 	}
 	function windowProp(text) {
 	newWindow = window.open('','newWin','width=300,height=100');
-	newWindow.document.write(text);
+	newWindow.document.writeln(text);
 	}
 	function closeWin(newWindow) {
 	newWindow.close();				
@@ -22,16 +20,37 @@ function popupWin() {
 <title>PackectTecWebSite</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onLoad="popupWin()">
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '130021647674655',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+      
+    FB.AppEvents.logPageView();   
+    
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <header class="header">
 <h1>OverView</h1>
 </header>
-
 <div class="topnav">
 	<a href="index.html"><b>Pagina principal</b></a>
 	<a href="monitor.html">Monitor Red</a>
 	<a href="caminos.html">Cerrar Caminos</a>
 	<a href="buscar.html">Búsqueda</a>
+	<a class="fb-login-button" data-width="25" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></a>
 </div>
 <div class="grid">
 	<div class="columnL">
